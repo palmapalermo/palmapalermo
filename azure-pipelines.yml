@@ -6,7 +6,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@0
+- task: Maven@1
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -16,7 +16,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/allure-results/TEST-*.xml'
     goals: 'mvn test -Dtest=ThirdTest'
-- task: AllureGenerate@1
+- task: AllureGenerate@2
   inputs:
     resultsDir: 'allure-results'
     targetDir: 'allure-report/$(Build.BuildNumber)'
