@@ -1,6 +1,0 @@
-/target
-/allure-results/*
-/allure-reports/*
-/.idea
-/*.iml
-!.gitkeep

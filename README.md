@@ -1,26 +1,53 @@
-# ALLURE DOCKER SERVICE EXAMPLES
-## OFFICIAL
+# JAVA TESTNG DEMO PROJECT USING ALLURE
 
-- Kubernetes --> [allure-docker-kubernetes-example](allure-docker-kubernetes-example)
+## INSTALLATION
+### JDK8
+- http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-- MultiProject --> [allure-docker-multi-project-example](allure-docker-multi-project-example)
+### MAVEN 3.5.4 or latest
+- https://maven.apache.org/download.cgi
+- https://maven.apache.org/install.html
 
-- TestNG  --> [allure-docker-java-testng-example](allure-docker-java-testng-example)
-- JUnit4  --> [allure-docker-java-junit4-example](allure-docker-java-junit4-example)
-- Cucumber JVM  --> [allure-docker-java-cucumber-jvm-example](allure-docker-java-cucumber-jvm-example)
-- CucumberJS  --> [allure-docker-nodejs-cucumber-example](allure-docker-nodejs-cucumber-example)
-- CucumberJS TypeScript --> [allure-docker-nodejs-typescript-cucumber-example](allure-docker-nodejs-typescript-cucumber-example)
-- Mocha --> [allure-docker-nodejs-typescript-mocha-example](allure-docker-nodejs-typescript-mocha-example)
-- Behave --> [allure-docker-python-behave-example](allure-docker-python-behave-example)
-- PyTest --> [allure-docker-python-pytest-example](allure-docker-python-pytest-example)
-- SpecFlow --> [AllureDockerCSharpExample](AllureDockerCSharpExample)
-- SpecFlow3 --> [AllureDockerCSharpSpecFlow3Example](AllureDockerCSharpSpecFlow3Example)
+### Setup JAVA_HOME & M2_HOME
+- https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html/microcontainer_user_guide/ch01
+- https://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
+
+Verify installation with:
+```sh
+java -version
+```
+```sh
+mvn --version
+```
+
+## USAGE
+Execute Allure Docker Service from this directory
+```sh
+docker-compose up -d allure allure-ui
+```
+
+- Verify if Allure API is working. Go to -> http://localhost:5050/allure-docker-service/latest-report
+
+- Verify if Allure UI is working. Go to -> http://localhost:5252/allure-docker-service-ui/
+
+Each time you run tests, the Allure report will be updated.
+Execute tests:
+```sh
+mvn test -Dtest=FirstTest
+ ```
+
+ ```sh
+mvn test -Dtest=SecondTest
+ ```
+
+ ```sh
+mvn test -Dtest=ThirdTest
+ ```
+
+ ```sh
+mvn test -Dtest=FourthTestFactory
+ ```
 
 See documentation here:
 - https://github.com/fescobar/allure-docker-service
 - https://github.com/fescobar/allure-docker-service-ui
-
-## NO OFFICIAL
-- Azure Container Instances --> https://github.com/khanzzirfan/jsonserver-mockend/blob/main/azure-aci-template.json
-- AWS Terraform --> https://github.com/Idea-Pool/aws-allure
-- GitHub Actions --> https://github.com/unickq/send-to-allure-docker-service-action
