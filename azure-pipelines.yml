@@ -20,6 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/allure-reports/TEST-*.xml'
     goals: 'test -Dtest=CucumberRunner'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'chmod 755 $(Agent.WorkFolder)/_tasks/AllureGenerate_5c975f9d-1c3a-469f-b7c2-8907bf3eacf1/1.0.0/node_modules/allure-commandline/dist/bin/allure'
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
