@@ -9,8 +9,8 @@ services:
     ports:
       - "5050:5050"
     volumes:
-      - ${WORKDIR}/allure-results:/app/allure-results
-      - ${WORKDIR}/allure-reports:/app/default-reports
+      - ${PWD}/allure-results:/app/allure-results
+      - ${PWD}/allure-reports:/app/default-reports
 
   allure-ui:
     image: "frankescobar/allure-docker-service-ui"
