@@ -19,7 +19,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/allure-reports/TEST-*.xml'
-    goals: 'test -Dtest=ThirdTest'
+    goals: 'test -Dtest=CucumberRunner'
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
