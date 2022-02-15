@@ -28,6 +28,6 @@ steps:
     dockerComposeCommand: 'up -d allure allure-ui'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/allure-reports'
+    targetPath: '**/allure-reports/'
     artifact: '*.html'
     publishLocation: 'pipeline'
