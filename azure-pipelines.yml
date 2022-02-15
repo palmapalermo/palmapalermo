@@ -28,6 +28,6 @@ steps:
     dockerComposeCommand: 'up -d allure allure-ui'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/allure-reports'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/allure-reports/'
     ArtifactName: '*.html'
     publishLocation: 'Container'
