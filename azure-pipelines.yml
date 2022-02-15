@@ -20,7 +20,14 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/allure-reports/TEST-*.xml'
     goals: 'test -Dtest=CucumberRunner'
-- task: AllureGenerate@1
+- task: DockerCompose@0
   inputs:
-    resultsDir: 'allure-results'
-    targetDir: 'allure-reports/$(Build.BuildNumber)'
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'up -d allure allure-ui'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/allure-reports'
+    artifact: '*.html'
+    publishLocation: 'pipeline'
