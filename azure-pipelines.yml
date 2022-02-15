@@ -26,7 +26,8 @@ steps:
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up -d allure allure-ui'
-- task: Bash@3
+- task: PublishBuildArtifacts@1
   inputs:
-    targetType: 'inline'
-    script: 'docker-compose logs'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/allure-reports'
+    ArtifactName: '*.html'
+    publishLocation: 'Container'
