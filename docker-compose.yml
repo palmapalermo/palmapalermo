@@ -9,9 +9,8 @@ services:
     ports:
       - "5050:5050"
     volumes:
-      - $(Pipeline.Workspace):/allure-results:/app/allure-results
-      - $(Pipeline.Workspace):/app/default-reports
-      - $(Pipeline.Workspace):/app/allure-generated
+      - ${WORKDIR}/allure-results:/app/allure-results
+      - ${WORKDIR}/allure-reports:/app/default-reports
 
   allure-ui:
     image: "frankescobar/allure-docker-service-ui"
