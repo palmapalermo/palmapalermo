@@ -25,7 +25,7 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'docker-compose up -d allure allure-ui'
+    dockerComposeCommand: 'up -d allure allure-ui'
 - task: Bash@3
   inputs:
     targetType: 'inline'
