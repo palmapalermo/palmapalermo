@@ -45,7 +45,7 @@ request_body = {
 }
 json_request_body = json.dumps(request_body)
 
-ssl_verification = True
+ssl_verification = False
 
 print("------------------SEND-RESULTS------------------")
 response = requests.post(allure_server + '/allure-docker-service/send-results?project_id=' + project_id, headers=headers, data=json_request_body, verify=ssl_verification)
