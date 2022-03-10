@@ -23,7 +23,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'python send_results.py'
+    script: 'ls \n python send_results.py'
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
